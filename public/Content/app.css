@@ -1,1 +1,126 @@
-/* custom css goes here */
+/* app.css, Asylhan Ukenov, 301108165, 07-10-2020*/
+/* The main navigation bar */
+#main-navigation {
+    font-family: 'David Libre', serif; 
+    font-size: 130%;
+}
+
+.main-nav-text {
+    font-size: 150%;
+    font-family: 'Shrikhand'
+}
+
+.active a{
+    color: #E67171 !important;
+}
+
+/* Home page background image and center text box */
+.background-image {
+    background-image: url(/Assets/images/background.jpg);
+    height: 100vh;
+    filter: blur(2px);
+    border: 3px solid black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-text {
+    margin-top: 70px;
+    color: white;
+    font-family: 'Sansita Swashed', cursive;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 70%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Containers for most of the pages */
+.black-container {
+    background-image: url(/Assets/images/background.jpg);
+    padding: 0;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron {
+    background-color: rgba(0,0,0, 0.6);
+    color: #C5C6C7;
+    font-family: 'David Libre', serif;
+}
+
+/* About me page */
+#my-img {
+    float: left;
+    width: 25%;
+    height: auto;
+    margin-top: 25px;
+    border: solid 3px black;
+}
+
+#about-name {
+    text-align: center;
+}
+
+#my-post {
+    margin-left: 35px;
+    float: left;
+    width: 70%;
+    font-size: large;
+    line-height: 60px;
+}
+
+.btn-center {
+    text-align: center;
+}
+
+/* Project page */
+.project-container {
+    margin-top: 40px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-container h1 {
+    text-align: center;
+}
+
+.carousel-caption {
+    color: #C2571A;
+}
+
+/* Services page */
+.services-container i {
+    color: #45A29E;
+}
+
+.services-container {
+    text-align: center;
+    display: block;
+    height: 65vh;;
+}
+
+/* Contact page */
+.contact-information {
+    text-align: center;
+}
+
+.contact-form {
+    text-align: center;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Footer */
+
+.navbar {
+    background-color: #1F2833 !important;
+}
