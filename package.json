@@ -1,5 +1,5 @@
 {
-  "name": "comp229-f2020-week3",
+  "name": "test",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -21,17 +21,17 @@
     "morgan": "~1.9.1",
     "popper.js": "^1.16.1"
   },
-  "description": "demo app for COMP229 Week 3",
-  "main": "index.js",
+  "description": "My protfolio",
+  "main": "server.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tsiliopoulos/COMP229-F2020-Week3.git"
+    "url": "git+https://github.com/ukenov/test.git"
   },
-  "author": "Tom Tsiliopoulos",
+  "author": "Asylhan Ukenov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tsiliopoulos/COMP229-F2020-Week3/issues"
+    "url": "https://github.com/ukenov/test.git/issues"
   },
-  "homepage": "https://github.com/tsiliopoulos/COMP229-F2020-Week3#readme"
+  "homepage": "https://github.com/ukenov/test.git#readme"
 }
