@@ -1,0 +1,36 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+  
+<div class="black-container">
+  <main class="container">
+    <div class="jumbotron">
+        <div class="bcontacts-container">
+        <h1><%= title %></h1>
+        <br>
+            <table class="table table-bordered table-dark table-hover">
+                <!-- Header Row-->
+                <tr>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Phone number</th>
+                    <th class="text-center">Email</th>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+
+                <% for(let count = 0; count < BcontactList.length; count++) { %>
+                    <tr>
+                        <td class="text-center"><%= BcontactList[count].name %></td>
+                        <td class="text-center"><%= BcontactList[count].number %></td>
+                        <td class="text-center"><%= BcontactList[count].email %></td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+</div>
+  
+<%- include partials/bottom_nav.ejs %>  
+
+<%- include partials/footer.ejs %>

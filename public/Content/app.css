@@ -104,7 +104,7 @@
 .services-container {
     text-align: center;
     display: block;
-    height: 65vh;;
+    min-height: 65vh;;
 }
 
 /* Contact page */
@@ -117,6 +117,11 @@
     width: 50%;
     margin-right: auto;
     margin-left: auto;
+}
+
+/* Business page */
+.bcontacts-container {
+    min-height: 65vh;
 }
 
 /* Footer */
