@@ -2,84 +2,31 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-// connect to our Business Contact Model
-let Bcontact = require('../models/bcontact');
+let passport = require('passport');
+
+let bcontactController = require('../controllers/bcontact')
+
+//helper function for guard purposes
+function requireAuth(req, res, next)
+{
+    // check if the user is logged in
+    if(!req.isAuthenticated())
+    {
+        return res.redirect('/login');
+    }
+    next();
+}
 
 // GET Route for the Business Contacts List -READ Operation
-router.get('/', (req, res, next) => {
- Bcontact.find((err, bcontactList) => {
-    if(err)
-    {
-        return console.error(err);
-    }
-    else 
-    {
-        //console.log(BcontactList);
+router.get('/', bcontactController.displayBcontactList)
 
-        res.render('bcontact/list', {title: 'Business Contacts', BcontactList: bcontactList});
-    }
- });
-})
-
-// GET Route for displaying the Edit page - UPDATE Operation
-router.get('/edit/:id', (req, res, next) => {
-    let id = req.params.id;
-
-    Bcontact.findById(id, (err, contactToEdit) => {
-        if(err) 
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else 
-        {
-            // show the edit view
-            res.render('bcontact/edit', {title: 'Edit Contact', contact: contactToEdit})
-        }
-    })
-});
+// GET Route for displaying the Edit page - READ Operation
+router.get('/edit/:id', requireAuth, bcontactController.displayEditPage);
 
 // POST Route for processing the Edit page - UPDATE Operation
-router.post('/edit/:id', (req, res, next) => {
-    let id = req.params.id;
-
-    let updatedContact = Bcontact({
-        "_id": id,
-        "name": req.body.name,
-        "number": req.body.number,
-        "email": req.body.email
-    });
-
-    Bcontact.updateOne({_id:id}, updatedContact, (err) => {
-        if(err) 
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else 
-        {
-            // refresh the business contact list
-            res.redirect('/bcontact-list');
-        }
-    });
-});
+router.post('/edit/:id', requireAuth, bcontactController.processEditPage);
 
 // GET to perform Deletion - DELETE Operation
-router.get('/delete/:id', (req, res, next) => {
-    let id = req.params.id;
-
-    Bcontact.remove({_id:id}, (err) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else 
-        {
-            // refresh the business contact list
-            res.redirect('/bcontact-list');
-        }
-    });
-});
+router.get('/delete/:id', requireAuth, bcontactController.performDelete);
 
 module.exports = router;
