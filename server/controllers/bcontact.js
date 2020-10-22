@@ -15,7 +15,10 @@ module.exports.displayBcontactList = (req, res, next) => {
         {
             //console.log(BcontactList);
 
-            res.render('bcontact/list', {title: 'Business Contacts', BcontactList: bcontactList});
+            res.render('bcontact/list', 
+            {title: 'Business Contacts', 
+            BcontactList: bcontactList, 
+            displayName: req.user ? req.user.displayName : ''});
         }
     });
 }
@@ -32,7 +35,10 @@ module.exports.displayEditPage = (req, res, next) => {
         else 
         {
             // show the edit view
-            res.render('bcontact/edit', {title: 'Edit Contact', contact: contactToEdit})
+            res.render('bcontact/edit', 
+            {title: 'Edit Contact', 
+            contact: contactToEdit,
+            displayName: req.user ? req.user.displayName : ''})
         }
     })
 };

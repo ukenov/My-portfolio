@@ -5,6 +5,7 @@
 <div class="black-container">
     <main class="container">
       <div class="jumbotron">
+      <div class="text-center">
         <!-- Message Area -->
         <% if(messages.length > 0) { %>
             <div class="alert alert-danger">  
@@ -12,7 +13,7 @@
             </div>
         <% } %>
         <h1>Please Login</h1>
-        <div class="text-center row">
+        <div class="row-center login-container">
             <form action="" method="POST" autocomplete="off">
                 <fieldset class="form-group">
                     <label for="username">Username: </label>
@@ -28,13 +29,14 @@
                     id="password" required>
                 </fieldset>
 
-                <fieldset class="form-group text-right">
-                    <input type="submit" class="btn btn-success" value="Login">
+                <fieldset class="form-group text-center">
+                    <input type="submit" class="btn btn-outline-success" value="Login">
                     <a href="/">
-                        <input type="button" class="btn btn-warning" value="Cancel">
+                        <input type="button" class="btn btn-outline-warning" value="Cancel">
                     </a>
                 </fieldset>
             </form>
+        </div>
         </div>
         </div>
       </div>
