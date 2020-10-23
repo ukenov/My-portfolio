@@ -20,11 +20,11 @@ function requireAuth(req, res, next)
 // GET Route for the Business Contacts List -READ Operation
 router.get('/', requireAuth, bcontactController.displayBcontactList)
 
-// GET Route for displaying the Edit page - READ Operation
-router.get('/edit/:id', requireAuth, bcontactController.displayEditPage);
+// GET Route for displaying the Update page - READ Operation
+router.get('/update/:id', requireAuth, bcontactController.displayUpdatePage);
 
-// POST Route for processing the Edit page - UPDATE Operation
-router.post('/edit/:id', requireAuth, bcontactController.processEditPage);
+// POST Route for processing the Update page - UPDATE Operation
+router.post('/update/:id', requireAuth, bcontactController.processUpdatePage);
 
 // GET to perform Deletion - DELETE Operation
 router.get('/delete/:id', requireAuth, bcontactController.performDelete);

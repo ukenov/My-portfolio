@@ -23,10 +23,10 @@ module.exports.displayBcontactList = (req, res, next) => {
     });
 }
 
-module.exports.displayEditPage = (req, res, next) => {
+module.exports.displayUpdatePage = (req, res, next) => {
     let id = req.params.id;
 
-    Bcontact.findById(id, (err, contactToEdit) => {
+    Bcontact.findById(id, (err, contactToUpdate) => {
         if(err) 
         {
             console.log(err);
@@ -34,16 +34,16 @@ module.exports.displayEditPage = (req, res, next) => {
         }
         else 
         {
-            // show the edit view
-            res.render('bcontact/edit', 
-            {title: 'Edit Contact', 
-            contact: contactToEdit,
+            // show the update view
+            res.render('bcontact/update', 
+            {title: 'Update Contact', 
+            contact: contactToUpdate,
             displayName: req.user ? req.user.displayName : ''})
         }
     })
 };
 
-module.exports.processEditPage = (req, res, next) => {
+module.exports.processUpdatePage = (req, res, next) => {
     let id = req.params.id;
 
     let updatedContact = Bcontact({
