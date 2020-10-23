@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 // setup express session
 app.use(session({
-  secret:"SomeSecret",
+  secret:"MySecret",
   saveUninitialized: false,
   resave: false
 }));
@@ -55,8 +55,6 @@ app.use(flash());
 // initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
-
-// passport user configuration
 
 // create a User Model Instance
 let userModel = require('../models/user');
